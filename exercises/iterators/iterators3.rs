@@ -41,7 +41,7 @@ pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
 fn result_with_list() -> Result<Vec<i32>, ()> {
     let numbers = vec![27, 297, 38502, 81];
     let division_results = numbers.into_iter().map(|n| divide(n, 27));
-    //Ok(division_results.filter(|r| r.is_ok()).map(|r| r.unwrap()).collect())
+    Ok(division_results.filter(|r| r.is_ok()).map(|r| r.unwrap()).collect())
     
     //Ok([1, 11, 1426, 3].to_vec())
     
