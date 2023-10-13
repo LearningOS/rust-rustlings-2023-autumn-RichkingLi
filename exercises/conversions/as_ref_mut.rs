@@ -11,7 +11,7 @@
 
 // Obtain the number of bytes (not characters) in the given argument.
 // TODO: Add the AsRef trait appropriately as a trait bound.
-fn byte_counter<T>(arg: T) -> usize {
+fn byte_counter<T: AsRef>(arg: T) -> usize {
     arg.as_ref().as_bytes().len()
 }
 
@@ -25,7 +25,9 @@ fn char_counter<T>(arg: T) -> usize {
 // TODO: Add the appropriate trait bound.
 fn num_sq<T>(arg: &mut T) {
     // TODO: Implement the function body.
-    ???
+    let value = arg.as_mut();
+    *value = (*value) * (*value);
+
 }
 
 #[cfg(test)]
